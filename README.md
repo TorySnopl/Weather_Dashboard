@@ -20,6 +20,11 @@ Weather dashboard with dynamically updated HTML and CSS
 >THEN I am again presented with current and future conditions for that city.
 
 
-##Mockup
+## Mockup
 
 ![image](https://github.com/TorySnopl/Weather_Dashboard/assets/131042146/36455e40-a6f0-4202-9cb9-00344c51b19b)
+
+
+
+### Source Code
+Meyer reset used and cited in the `reset.css`. Libraries used: bootstrap, jQuery, jQueryUI, and Google Fonts.
