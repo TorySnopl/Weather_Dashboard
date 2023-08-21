@@ -6,3 +6,5 @@ $( function() {
       source: availableCities
     });
   } );
+
+  const apiKey = "215c1ef3d4e8886662b4ff8cdb187a51";
