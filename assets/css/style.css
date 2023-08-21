@@ -20,3 +20,48 @@
     font-family: 'cinzel', sans-serif;
 }
 
+.mainsec{
+    margin-top: 50px;
+}
+
+.custom-text {
+    color: var(--charcoal);
+    font-family: 'cinzel', sans-serif;
+}
+
+.searchtitle{
+    margin-left: 2%;
+    font-size: 16px;
+}
+
+.ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.custom-btn {
+    border: 2px solid var(--charcoal);
+    background-color: var(--Lblue);
+    color: var(--charcoal);
+    font-family: 'cinzel', sans-serif;
+    margin-top: 10px;
+    margin-left: 2%;
+}
+
+
+
+
+
+/* Pseudo element*/
+
+.custom-btn:hover {
+    border: 2px dashed var(--charcoal);
+    background-color: var(--charcoal);
+    color: var(--Lblue);
+    cursor: pointer;
+}
+
+
+
+
