@@ -49,6 +49,14 @@
     margin-left: 2%;
 }
 
+#sortable { list-style-type: none; margin-top: 50px; padding: 0; width: 60%; }
+
+#sortable li { margin: 1px 5px 5px 5px; padding: 5px; font-size: 1.2em; height: 1.5em; background-color: var(--gray); color: var(--Lblue); border: 2px solid var(--charcoal); }
+
+html>body #sortable li { height: 1.5em; line-height: 1.2em; }
+
+.ui-state-highlight { height: 1.5em; line-height: 1.2em; }
+
 
 
 
@@ -60,6 +68,13 @@
     background-color: var(--charcoal);
     color: var(--Lblue);
     cursor: pointer;
+}
+
+#sortable li:hover {
+    cursor: pointer;
+    background-color: var(--Lblue);
+    color: var(--charcoal);
+
 }
 
 
