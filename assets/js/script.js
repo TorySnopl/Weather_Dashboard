@@ -11,31 +11,90 @@ $( function() {
   const submitBtn = document.querySelector('.submitBtn');
   let userInput = document.querySelector('#tags');
  
- 
+
+
+
   
   
 
 
   submitBtn.addEventListener('click', function(){
     let city = userInput.value;
-    console.log(city);
+    let cityList = document.getElementById('sortable');
+    let showCurrent = document.getElementById('current-conditions');
+    let showFuture = document.getElementById('forecast');
+    
+   
     let geoCode = "http://api.openweathermap.org/geo/1.0/direct?q="+city+"&appid="+apiKey;
     fetch (geoCode)
     .then(Response => Response.json())
     .then(latLon => {
-        console.log(latLon);
-        let latCoordinates = {lat: latLon[0].lat};
-        let lonCoordinates = {lon: latLon[0].lon};
+        
+        let latCoordinates = JSON.stringify(latLon[0].lat);
+        let lonCoordinates = JSON.stringify(latLon[0].lon);
         console.log(latCoordinates, lonCoordinates);
-        let weatherAPI = "https://api.openweathermap.org/data/3.0/onecall?lat="+latCoordinates+"&lon="+lonCoordinates+"&appid="+apiKey;
-console.log(weatherAPI);
+        let weatherAPI = 'http://api.openweathermap.org/data/2.5/forecast?lat='+latCoordinates+'&lon='+lonCoordinates+'&appid='+apiKey+'&units=imperial';
+       
+        fetch(weatherAPI)
+        .then(response => response.json())
+        .then(currentWeather => {
+          console.log(currentWeather);
+          let savedCity = document.createElement('li')
+          savedCity.textContent = city;
+          savedCity.classList.add('ui-state-default', 'custom-text');
+          cityList.append(savedCity);
+
+          let curCity = currentWeather.city.name;
+          let curDate = currentWeather.list[0].dt_txt;
+          let curTemp = currentWeather.list[0].main.temp;
+          let curWind = currentWeather.list[0].wind.speed;
+          let curHumid = currentWeather.list[0].main.humidity;
+          let disCity = document.createElement('h2');
+          let disTemp = document.createElement('p');
+          let disWind = document.createElement('p');
+          let disHumid = document.createElement('p');
+          disCity.textContent = 'City: '+ curCity + ' ' + curDate;
+          disTemp.textContent = 'Current Temp: '+curTemp+ ' degrees';
+          disWind.textContent = 'Wind Speed: '+curWind+' mph';
+          disHumid.textContent = 'Humidity: '+curHumid+ ' %';
+          disCity.classList.add('custom-text');
+          disTemp.classList.add('custom-text');
+          disWind.classList.add('custom-text');
+          disHumid.classList.add('custom-text');
+
+          showCurrent.append(disCity, disTemp, disWind, disHumid);
+          
+
+        
+
+      
+
+
+          
+          
+          
+        })
+        .catch(error => {
+          console.log(error);
+        })
     })
     .catch (error => {
         console.log(error);
     })
    
-
+  
 });
+
+$( function() {
+  $( "#sortable" ).sortable({
+    placeholder: "ui-state-highlight"
+  });
+  $( "#sortable" ).disableSelection();
+} );
+
+
+
+
 
 
 
