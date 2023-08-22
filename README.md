@@ -27,4 +27,4 @@ Weather dashboard with dynamically updated HTML and CSS
 
 
 ### Source Code
-Meyer reset used and cited in the `reset.css`. Libraries used: bootstrap, jQuery, jQueryUI, and Google Fonts.
+Meyer reset used and cited in the `reset.css`. Libraries used: bootstrap, jQuery, jQueryUI, and Google Fonts. City array created by norcal82 on github. 
