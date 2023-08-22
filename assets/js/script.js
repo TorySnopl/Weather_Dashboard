@@ -8,3 +8,44 @@ $( function() {
   } );
 
   const apiKey = "215c1ef3d4e8886662b4ff8cdb187a51";
+  const submitBtn = document.querySelector('.submitBtn');
+  let userInput = document.querySelector('#tags');
+ 
+ 
+  
+  
+
+
+  submitBtn.addEventListener('click', function(){
+    let city = userInput.value;
+    console.log(city);
+    let geoCode = "http://api.openweathermap.org/geo/1.0/direct?q="+city+"&appid="+apiKey;
+    fetch (geoCode)
+    .then(Response => Response.json())
+    .then(latLon => {
+        console.log(latLon);
+        let latCoordinates = {lat: latLon[0].lat};
+        let lonCoordinates = {lon: latLon[0].lon};
+        console.log(latCoordinates, lonCoordinates);
+        let weatherAPI = "https://api.openweathermap.org/data/3.0/onecall?lat="+latCoordinates+"&lon="+lonCoordinates+"&appid="+apiKey;
+console.log(weatherAPI);
+    })
+    .catch (error => {
+        console.log(error);
+    })
+   
+
+});
+
+
+
+
+
+
+
+
+  
+
+  
+
+
