@@ -31,7 +31,11 @@
     margin-top: 10px;
     margin-bottom: 0px;
     margin-left: 1%;
-    font-size: 16px;
+    font-size: 30px;
+}
+
+#tags {
+    padding: 5px;
 }
 
 .ui-autocomplete {
@@ -47,6 +51,7 @@
     font-family: 'cinzel', sans-serif;
     margin-top: 10px;
     margin-left: 1%;
+    padding: 5px;
 }
 
 #sortable { list-style-type: none; margin-top: 50px; padding: 0; width: 60%; }
@@ -60,6 +65,30 @@ html>body #sortable li { height: 1.5em; line-height: 1.2em; }
 #current-conditions {
     border: 3px solid var(--gray);
 }
+
+#current-conditions h2 {
+    font-size: 40px;
+}
+
+#current-conditions p {
+    font-size: 20px;
+}
+
+.card {
+    background-color: var(--Lblue);
+    padding: 5px;
+    
+}
+
+.card-title {
+    font-size: 22px;
+}
+
+.list-group-item {
+    font-size: 16px;
+}
+
+
 
 
 
