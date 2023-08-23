@@ -20,9 +20,7 @@
     font-family: 'cinzel', sans-serif;
 }
 
-.mainsec{
-    margin-top: 50px;
-}
+
 
 .custom-text {
     color: var(--charcoal);
@@ -30,7 +28,9 @@
 }
 
 .searchtitle{
-    margin-left: 2%;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-left: 1%;
     font-size: 16px;
 }
 
@@ -46,7 +46,7 @@
     color: var(--charcoal);
     font-family: 'cinzel', sans-serif;
     margin-top: 10px;
-    margin-left: 2%;
+    margin-left: 1%;
 }
 
 #sortable { list-style-type: none; margin-top: 50px; padding: 0; width: 60%; }
@@ -56,6 +56,10 @@
 html>body #sortable li { height: 1.5em; line-height: 1.2em; }
 
 .ui-state-highlight { height: 1.5em; line-height: 1.2em; }
+
+#current-conditions {
+    border: 3px solid var(--gray);
+}
 
 
 
