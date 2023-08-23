@@ -56,13 +56,17 @@ $( function() {
 
           let curCity = currentWeather.city.name;
           let curDate = currentWeather.list[0].dt_txt;
+          let curIcon = currentWeather.list[0].weather[0].icon;
           let curTemp = currentWeather.list[0].main.temp;
           let curWind = currentWeather.list[0].wind.speed;
           let curHumid = currentWeather.list[0].main.humidity;
+          let disIcon = document.createElement('img');
           let disCity = document.createElement('h2');
           let disTemp = document.createElement('p');
           let disWind = document.createElement('p');
           let disHumid = document.createElement('p');
+          disIcon.src = "http://openweathermap.org/img/w/" + curIcon + ".png";
+          disIcon.alt = "weather Icon";
           disCity.textContent = 'City of '+ curCity + ' on ' + curDate;
           disTemp.textContent = 'Current Temp: '+curTemp+ ' degrees';
           disWind.textContent = 'Wind Speed: '+curWind+' mph';
@@ -72,7 +76,7 @@ $( function() {
           disWind.classList.add('custom-text');
           disHumid.classList.add('custom-text');
 
-          showCurrent.append(disCity, disTemp, disWind, disHumid);
+          showCurrent.append(disCity, disIcon, disTemp, disWind, disHumid);
 
          
           let fI1 = currentWeather.list[7].weather[0].icon;
