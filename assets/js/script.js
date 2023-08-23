@@ -12,6 +12,8 @@ $( function() {
   let userInput = document.querySelector('#tags');
   let showCurrent = document.getElementById('current-conditions');
   let showFuture = document.getElementById('forecast');
+    
+  
  
 
 
@@ -19,14 +21,14 @@ $( function() {
   
 
 
-  submitBtn.addEventListener('click', function(){
-    while (showCurrent.firstChild){
-      showCurrent.removeChild(showCurrent.firstChild);
-    }
-    getWeather()
-  });
+  submitBtn.addEventListener('click', getWeather);
+  
 
     function getWeather(){
+
+      while (showCurrent.firstChild){
+        showCurrent.removeChild(showCurrent.firstChild);
+      }
      
 
     let city = userInput.value;
@@ -149,6 +151,7 @@ $( function() {
 
           
 
+         
           
           
 
@@ -159,7 +162,7 @@ $( function() {
 
           
           
-          
+        
         })
         .catch(error => {
           console.log(error);
@@ -178,6 +181,9 @@ $( function() {
   });
   $( "#sortable" ).disableSelection();
 } );
+
+
+
 
 
 
