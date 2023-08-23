@@ -10,19 +10,29 @@ $( function() {
   const apiKey = "215c1ef3d4e8886662b4ff8cdb187a51";
   const submitBtn = document.querySelector('.submitBtn');
   let userInput = document.querySelector('#tags');
+  let showCurrent = document.getElementById('current-conditions');
+  let showFuture = document.getElementById('forecast');
  
 
 
 
   
-  
 
 
   submitBtn.addEventListener('click', function(){
+    while (showCurrent.firstChild){
+      showCurrent.removeChild(showCurrent.firstChild);
+    }
+    getWeather()
+  });
+
+    function getWeather(){
+     
+
     let city = userInput.value;
     let cityList = document.getElementById('sortable');
-    let showCurrent = document.getElementById('current-conditions');
-    let showFuture = document.getElementById('forecast');
+  
+    
     
    
     let geoCode = "http://api.openweathermap.org/geo/1.0/direct?q="+city+"&appid="+apiKey;
@@ -53,7 +63,7 @@ $( function() {
           let disTemp = document.createElement('p');
           let disWind = document.createElement('p');
           let disHumid = document.createElement('p');
-          disCity.textContent = 'City: '+ curCity + ' ' + curDate;
+          disCity.textContent = 'City of '+ curCity + ' on ' + curDate;
           disTemp.textContent = 'Current Temp: '+curTemp+ ' degrees';
           disWind.textContent = 'Wind Speed: '+curWind+' mph';
           disHumid.textContent = 'Humidity: '+curHumid+ ' %';
@@ -63,6 +73,30 @@ $( function() {
           disHumid.classList.add('custom-text');
 
           showCurrent.append(disCity, disTemp, disWind, disHumid);
+
+         
+          let fI1 = currentWeather.list[7].weather[0].icon;
+          let fI2 = currentWeather.list[15].weather[0].icon;
+          let fI3 = currentWeather.list[23].weather[0].icon;
+          let fI4 = currentWeather.list[31].weather[0].icon;
+          let fI5 = currentWeather.list[39].weather[0].icon;
+
+          let i1El = document.getElementById('icon1');
+          let i2El = document.getElementById('icon2');
+          let i3El = document.getElementById('icon3');
+          let i4El = document.getElementById('icon4');
+          let i5El = document.getElementById('icon5');
+
+          i1El.src = "http://openweathermap.org/img/w/" + fI1 + ".png";
+          i2El.src = "http://openweathermap.org/img/w/" + fI2 + ".png";
+          i3El.src = "http://openweathermap.org/img/w/" + fI3 + ".png";
+          i4El.src = "http://openweathermap.org/img/w/" + fI4 + ".png";
+          i5El.src = "http://openweathermap.org/img/w/" + fI5 + ".png";
+
+
+          
+
+          
           
 
         
@@ -83,7 +117,7 @@ $( function() {
     })
    
   
-});
+  };
 
 $( function() {
   $( "#sortable" ).sortable({
