@@ -93,6 +93,55 @@ $( function() {
           i4El.src = "http://openweathermap.org/img/w/" + fI4 + ".png";
           i5El.src = "http://openweathermap.org/img/w/" + fI5 + ".png";
 
+          let fT1 = document.getElementById('title1');
+          let fT2 = document.getElementById('title2');
+          let fT3 = document.getElementById('title3');
+          let fT4 = document.getElementById('title4');
+          let fT5 = document.getElementById('title5');
+
+          fT1.textContent = currentWeather.list[7].dt_txt;
+          fT2.textContent = currentWeather.list[15].dt_txt;
+          fT3.textContent = currentWeather.list[23].dt_txt;
+          fT4.textContent = currentWeather.list[31].dt_txt;
+          fT5.textContent = currentWeather.list[39].dt_txt;
+
+          let fTp1 = document.getElementById('temp1');
+          let fTp2 = document.getElementById('temp2');
+          let fTp3 = document.getElementById('temp3');
+          let fTp4 = document.getElementById('temp4');
+          let fTp5 = document.getElementById('temp5');
+
+          fTp1.textContent = 'Temp: ' + currentWeather.list[7].main.temp + '\u2109';
+          fTp2.textContent = 'Temp: ' + currentWeather.list[15].main.temp + '\u2109';
+          fTp3.textContent = 'Temp: ' + currentWeather.list[23].main.temp + '\u2109';
+          fTp4.textContent = 'Temp: ' + currentWeather.list[31].main.temp + '\u2109';
+          fTp5.textContent = 'Temp: ' + currentWeather.list[39].main.temp + '\u2109';
+
+          let fW1 = document.getElementById('wind1');
+          let fW2 = document.getElementById('wind2');
+          let fW3 = document.getElementById('wind3');
+          let fW4 = document.getElementById('wind4');
+          let fW5 = document.getElementById('wind5');
+
+          fW1.textContent = 'Wind: '+ currentWeather.list[7].wind.speed + ' MPH';
+          fW2.textContent = 'Wind: '+ currentWeather.list[15].wind.speed + ' MPH';
+          fW3.textContent = 'Wind: '+ currentWeather.list[23].wind.speed + ' MPH';
+          fW4.textContent = 'Wind: '+ currentWeather.list[31].wind.speed + ' MPH';
+          fW5.textContent = 'Wind: '+ currentWeather.list[39].wind.speed + ' MPH';
+
+          let fH1 = document.getElementById('humid1');
+          let fH2 = document.getElementById('humid2');
+          let fH3 = document.getElementById('humid3');
+          let fH4 = document.getElementById('humid4');
+          let fH5 = document.getElementById('humid5');
+
+          fH1.textContent = 'Humidity '+ currentWeather.list[7].main.humidity + '\u0025';
+          fH2.textContent = 'Humidity '+ currentWeather.list[15].main.humidity + '\u0025';
+          fH3.textContent = 'Humidity '+ currentWeather.list[23].main.humidity + '\u0025';
+          fH4.textContent = 'Humidity '+ currentWeather.list[31].main.humidity + '\u0025';
+          fH5.textContent = 'Humidity '+ currentWeather.list[39].main.humidity + '\u0025';
+          
+
 
           
 
