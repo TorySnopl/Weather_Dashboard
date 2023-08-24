@@ -17,14 +17,16 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Weather Dashboard</title>
 </head>
+<!-- Google Fonts, Jquery, JqueryUI, and Bootstrap linked above-->
 <body>
- 
+ <!-- Header bar and website title -->
  <header class="header">
     <h1 class="title">Weather Dashboard</h1>
  </header>
 
 <main class="container-fluid vh-100"> 
     <div class="row">
+        <!-- Search Box -->
         <section class="col col-sm-12 col-md-6 col-lg-3" id="search">
             <p class="custom-text searchtitle">Search For A City:</p>
             <div class="ui-widget">
@@ -33,16 +35,15 @@
             
             </div>
             <button class="btn submitBtn custom-btn" type="submit" value="submit">Submit</button>
-        
-             
+         
         </section>
         
-
+        <!-- Current Conditions, elements dynamically created in JS -->
         <section class="col col-sm-12 col-md-6 col-lg-9 mt-2 p-1" id="current-conditions">
           
-
         </section>
 
+        <!-- Saved city list, li's dynamically created in JS -->
         <section class="col col-sm-12 col-md-6 col-lg-3" id="city-list">
           
             <ul id="sortable">
@@ -50,6 +51,7 @@
             </ul>
         </section>
 
+        <!--Forecast cards-->
         <section class="col col-sm-12 col-md-6 col-lg-9" id="forecast">
             <div class="container forecasts p-5">
                 <div class="row  justify-content-around">
