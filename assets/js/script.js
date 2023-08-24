@@ -36,14 +36,12 @@ $( function() {
     cityList.appendChild(newCityEl);
     getWeather()
     
-    const locations = Array.from(cityList.querySelectorAll('li'));
-    console.log(locations)
-
-    locations.forEach(function(li){
-      li.addEventListener('click', function(){
-        console.log(li.textContent)
-      })
-    })
+   cityList.addEventListener('click', function(event){
+    if(event.target.tagName === "LI"){
+      let chosenCity = event.target.textContent;
+      getWeather(chosenCity)
+    }
+   })
      
   
   });
@@ -82,7 +80,7 @@ $( function() {
         fetch(weatherAPI)
         .then(response => response.json())
         .then(currentWeather => {
-          
+         
 
           let curCity = currentWeather.city.name;
           let curDate = currentWeather.list[0].dt_txt;
@@ -206,7 +204,7 @@ $( function() {
 
 $( function() {
   $( "#sortable" ).sortable({
-    placeholder: "ui-state-highlight"
+   placeholder: "ui-state-highlight"
   });
   $( "#sortable" ).disableSelection();
 } );
