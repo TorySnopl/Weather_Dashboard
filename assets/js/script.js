@@ -52,7 +52,7 @@ $( function() {
         showCurrent.removeChild(showCurrent.firstChild);
       }
      
-    let geoCode = "http://api.openweathermap.org/geo/1.0/direct?q="+city+"&appid="+apiKey;
+    let geoCode = "https://api.openweathermap.org/geo/1.0/direct?q="+city+"&appid="+apiKey;
     fetch (geoCode)
     .then(Response => Response.json())
     .then(latLon => {
@@ -60,7 +60,7 @@ $( function() {
         let latCoordinates = JSON.stringify(latLon[0].lat);
         let lonCoordinates = JSON.stringify(latLon[0].lon);
         console.log(latCoordinates, lonCoordinates);
-        let weatherAPI = 'http://api.openweathermap.org/data/2.5/forecast?lat='+latCoordinates+'&lon='+lonCoordinates+'&appid='+apiKey+'&units=imperial';
+        let weatherAPI = 'https://api.openweathermap.org/data/2.5/forecast?lat='+latCoordinates+'&lon='+lonCoordinates+'&appid='+apiKey+'&units=imperial';
        
         fetch(weatherAPI)
         .then(response => response.json())
@@ -78,7 +78,7 @@ $( function() {
           let disTemp = document.createElement('p');
           let disWind = document.createElement('p');
           let disHumid = document.createElement('p');
-          disIcon.src = "http://openweathermap.org/img/w/" + curIcon + ".png";
+          disIcon.src = "https://openweathermap.org/img/w/" + curIcon + ".png";
           disIcon.alt = "weather Icon";
           disCity.textContent = 'City of '+ curCity + ' on ' + curDate;
           disTemp.textContent = 'Current Temp: '+curTemp+ ' degrees';
@@ -104,11 +104,11 @@ $( function() {
           let i4El = document.getElementById('icon4');
           let i5El = document.getElementById('icon5');
 
-          i1El.src = "http://openweathermap.org/img/w/" + fI1 + ".png";
-          i2El.src = "http://openweathermap.org/img/w/" + fI2 + ".png";
-          i3El.src = "http://openweathermap.org/img/w/" + fI3 + ".png";
-          i4El.src = "http://openweathermap.org/img/w/" + fI4 + ".png";
-          i5El.src = "http://openweathermap.org/img/w/" + fI5 + ".png";
+          i1El.src = "https://openweathermap.org/img/w/" + fI1 + ".png";
+          i2El.src = "https://openweathermap.org/img/w/" + fI2 + ".png";
+          i3El.src = "https://openweathermap.org/img/w/" + fI3 + ".png";
+          i4El.src = "https://openweathermap.org/img/w/" + fI4 + ".png";
+          i5El.src = "https://openweathermap.org/img/w/" + fI5 + ".png";
 
           let fT1 = document.getElementById('title1');
           let fT2 = document.getElementById('title2');
