@@ -14,7 +14,9 @@ $( function() {
   let showFuture = document.getElementById('forecast');
   let city = '';
   let cityList = document.getElementById('sortable');
-  let pastCities = [];
+  let savedCity = document.createElement('li')
+  
+  
 
     
   
@@ -25,17 +27,44 @@ $( function() {
   
 
 
-  submitBtn.addEventListener('click', getWeather);
+  submitBtn.addEventListener('click', function(){
+    
+    city = userInput.value;
+    savedCity.textContent = city;
+    savedCity.classList.add('ui-state-default', 'custom-text');
+    const newCityEl = savedCity.cloneNode(true);
+    cityList.appendChild(newCityEl);
+    getWeather()
+    
+    const locations = Array.from(cityList.querySelectorAll('li'));
+    console.log(locations)
+
+    locations.forEach(function(li){
+      li.addEventListener('click', function(){
+        console.log(li.textContent)
+      })
+    })
+     
+  
+  });
+
   
 
-    function getWeather(){
+
+
+  
+
+  
+
+    function getWeather(city){
 
       while (showCurrent.firstChild){
         showCurrent.removeChild(showCurrent.firstChild);
       }
      
+      city = userInput.value;
 
-    city = userInput.value;
+    
   
     
     
@@ -53,11 +82,7 @@ $( function() {
         fetch(weatherAPI)
         .then(response => response.json())
         .then(currentWeather => {
-          console.log(currentWeather);
-          let savedCity = document.createElement('li')
-          savedCity.textContent = city;
-          savedCity.classList.add('ui-state-default', 'custom-text');
-          cityList.append(savedCity);
+          
 
           let curCity = currentWeather.city.name;
           let curDate = currentWeather.list[0].dt_txt;
@@ -157,8 +182,7 @@ $( function() {
           
           
           
-          pastCities = Array.from(cityList.querySelectorAll('li'));
-          return pastCities;
+          
         
 
       
@@ -186,14 +210,6 @@ $( function() {
   });
   $( "#sortable" ).disableSelection();
 } );
-
-console.log(pastCities)
-
-pastCities.forEach(li =>{
-  li.addEventListener('click', function(){
-    console.log(li);
-  })
-})
 
 
 
