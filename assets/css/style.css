@@ -1,3 +1,4 @@
+/* Root Colors */
 :root {
     --black: #000000;
     --charcoal: #2f4550;
@@ -7,6 +8,7 @@
 
 }
 
+/* header and website title */
 .header {
     width: 100%;
     background-color: var(--gray);
@@ -21,12 +23,13 @@
 }
 
 
-
+/* custom text used on all text elements */
 .custom-text {
     color: var(--charcoal);
     font-family: 'cinzel', sans-serif;
 }
 
+/* Search box and submit button */
 .searchtitle{
     margin-top: 10px;
     margin-bottom: 0px;
@@ -54,6 +57,7 @@
     padding: 5px;
 }
 
+/* Sortable saved city list */
 #sortable { list-style-type: none; margin-top: 50px; padding: 0; width: 60%; }
 
 #sortable li { margin: 1px 5px 5px 5px; padding: 5px; font-size: 1.2em; height: 1.5em; background-color: var(--gray); color: var(--Lblue); border: 2px solid var(--charcoal); }
@@ -62,6 +66,7 @@ html>body #sortable li { height: 1.5em; line-height: 1.2em; }
 
 .ui-state-highlight { height: 1.5em; line-height: 1.2em; }
 
+/* Current Weather */
 #current-conditions {
     border: 3px solid var(--gray);
 }
@@ -74,6 +79,7 @@ html>body #sortable li { height: 1.5em; line-height: 1.2em; }
     font-size: 20px;
 }
 
+/* Forecast Cards */
 .card {
     background-color: var(--Lblue);
     padding: 5px;
