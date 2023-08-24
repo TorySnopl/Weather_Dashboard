@@ -12,6 +12,10 @@ $( function() {
   let userInput = document.querySelector('#tags');
   let showCurrent = document.getElementById('current-conditions');
   let showFuture = document.getElementById('forecast');
+  let city = '';
+  let cityList = document.getElementById('sortable');
+  let pastCities = [];
+
     
   
  
@@ -31,8 +35,7 @@ $( function() {
       }
      
 
-    let city = userInput.value;
-    let cityList = document.getElementById('sortable');
+    city = userInput.value;
   
     
     
@@ -147,18 +150,20 @@ $( function() {
           fH4.textContent = 'Humidity '+ currentWeather.list[31].main.humidity + '\u0025';
           fH5.textContent = 'Humidity '+ currentWeather.list[39].main.humidity + '\u0025';
           
-
-
-          
-
          
           
-          
 
+          
+          
+          
+          
+          pastCities = Array.from(cityList.querySelectorAll('li'));
+          return pastCities;
         
 
       
 
+         
 
           
           
@@ -182,7 +187,13 @@ $( function() {
   $( "#sortable" ).disableSelection();
 } );
 
+console.log(pastCities)
 
+pastCities.forEach(li =>{
+  li.addEventListener('click', function(){
+    console.log(li);
+  })
+})
 
 
 
