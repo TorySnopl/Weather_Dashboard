@@ -19,9 +19,16 @@ $( function() {
   let city = '';
   let cityList = document.getElementById('sortable');
   let savedCity = document.createElement('li')
-  
-  
-//takes input and fetch's city weather data and dynamically creates list item for saved cities
+
+// Loads weather for last searched city from local storage
+  function loadCityList (){
+    city = localStorage.getItem('cityList')
+    getWeather(city)
+  };
+  loadCityList()
+
+ 
+//takes input and fetch's city weather data and dynamically creates list item for saved cities & adds last search to local storage.
 
   submitBtn.addEventListener('click', function(){
     
@@ -30,6 +37,7 @@ $( function() {
     savedCity.classList.add('ui-state-default', 'custom-text');
     const newCityEl = savedCity.cloneNode(true);
     cityList.appendChild(newCityEl);
+    localStorage.setItem('cityList', newCityEl.textContent);
     getWeather(city)
   });
      
